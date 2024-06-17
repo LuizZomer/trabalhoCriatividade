@@ -17,18 +17,9 @@ export const Apresentation = () => {
           crucial para o sucesso do projeto, que busca melhorar a vida desses
           animais.
         </p>
-        <ActionButton
-          height="5.2rem"
-          label="Continuar lendo..."
-          width="19.6rem"
-        />
+        <ActionButton height="4.33vh" label="Continuar lendo..." width="60%" />
       </Styles.Content>
-      <ImgComponent
-        src={dogHouses}
-        alt="casas de cachorros"
-        height="70rem"
-        width="117rem"
-      />
+      <ImgComponent src={dogHouses} alt="casas de cachorros" width="60%" />
     </Styles.Container>
   );
 };

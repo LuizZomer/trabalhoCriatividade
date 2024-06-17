@@ -18,10 +18,10 @@ export const OpinionsCard = ({
 const Container = styled.div`
   width: 100%;
   background-color: #f4f6fa;
-  padding: 2.5rem 0 6.8rem 2.8rem;
+  padding: 24px 24px 0 24px;
+  height: 287px;
 
   > p {
-    margin-top: 1rem;
-    width: 25.3rem;
+    margin-top: 10px;
   }
 `;

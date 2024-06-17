@@ -41,19 +41,19 @@ export const GlobalStyle = createGlobalStyle`
     p{
         color: #333333;
         font-size: 1.6rem;
-        line-height: 1.9rem;
+        line-height: 24px;
         font-weight: 400;
     }
 
     .p1{
         font-size: 2rem;
-        line-height: 2rem;
+        line-height: 30px;
         font-weight: 400;
     }
 
     .p2{
         font-size: 1.6rem;
-        line-height: 1.9rem;
+        line-height: 24px;
         font-weight: 400;
     }
 
@@ -64,6 +64,19 @@ export const GlobalStyle = createGlobalStyle`
     li{
         font-size: 1.6rem;
         color: #333333;
+    }
+
+    input{
+        height: 56px;
+        width: 100%;
+        border: 1px solid #4762FF;
+        border-radius: 8px;
+        padding-left: 22px;
+
+        
+        &::placeholder{
+            color: #979797;
+        }
     }
 
 `

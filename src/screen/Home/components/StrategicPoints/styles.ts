@@ -5,12 +5,23 @@ export const Container = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6.1rem;
+    gap: 61px;
+
+    @media (max-width: 900px){
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
 `
 
 export const ContentDiv = styled.div`
     display: flex;
     flex-direction: column;
-    width: 54rem;
-    gap: 1.1rem;
+    max-width: 540px;
+    gap: 11px;
+
+    @media (max-width: 900px) {
+        max-width: none;
+    }
 `

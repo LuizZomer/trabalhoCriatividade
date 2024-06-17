@@ -1,4 +1,6 @@
-import { Container, ContainerList } from "./styles";
+import { Container, ContainerList, ImageContainer } from "./styles";
+import dog from "./assets/dogImage.svg";
+import { ImgComponent } from "../../../../components/ImgComponent";
 
 export const OurCause = () => {
   return (
@@ -32,6 +34,9 @@ export const OurCause = () => {
           </li>
         </ol>
       </ContainerList>
+      <ImageContainer>
+        <ImgComponent src={dog} width="100%" height="400px" />
+      </ImageContainer>
     </Container>
   );
 };

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const HeaderContainer = styled.header`
-    height: 7.7rem;
+    height: 77px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -11,10 +11,10 @@ export const HeaderContainer = styled.header`
 `
 
 export const NavContainer = styled.nav`
-    font-size: 1.6rem;
+    font-size: 16px;
     >ul{
         display: flex;
-        gap: 4.6rem;
+        gap: 46px;
         list-style: none;
     }
 

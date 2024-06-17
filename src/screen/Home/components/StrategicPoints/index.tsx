@@ -17,12 +17,7 @@ export const StrategicPoints = () => {
           animais.
         </p>
       </Styles.ContentDiv>
-      <ImgComponent
-        src={map}
-        alt="Imagem de um mapa"
-        width="70.8rem"
-        height="54.1rem"
-      />
+      <ImgComponent src={map} alt="Imagem de um mapa" width="40%" />
     </Styles.Container>
   );
 };

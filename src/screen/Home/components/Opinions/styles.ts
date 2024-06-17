@@ -4,14 +4,23 @@ export const Container = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.8rem;
-    margin-top: 8.0rem;
+    gap: 18px;
+    margin-top: 80px;
+    
+    @media (max-width: 900px) {
+        text-align: center;
+    }
 `
 
 export const GridOpnionsContainer = styled.div`
     display: grid;
-    grid-template-columns: minmax(30.3rem, 50rem) minmax(30.3rem, 50.5rem);
+    grid-template-columns: minmax(303px, 500px) minmax(303px, 505px);
     align-content: center;
-    gap: 3.2rem;
-    margin-top: 7rem;
+    gap: 32px;
+    margin-top: 70px;
+
+    @media (max-width:900px) {
+        grid-template-columns: repeat(auto-fill, minmax(303px, 500px)) ;
+
+    }
 `

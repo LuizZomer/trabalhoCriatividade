@@ -1,20 +1,34 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  margin-top: 14rem;
+  width: 100%;
+  margin-top: 100px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1.5rem;
+  gap: 10px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 50px;
+    padding: 0 10px;
+  }
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  width: 56rem;
+  gap: 16px;
+  max-width: 550px;
 
   > p {
-    margin-bottom: 3.2rem;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 900px) {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: none;
   }
 `;
