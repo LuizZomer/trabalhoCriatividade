@@ -72,6 +72,7 @@ export const GlobalStyle = createGlobalStyle`
         border: 1px solid #4762FF;
         border-radius: 8px;
         padding-left: 22px;
+        font-size: 1.8rem;
 
         
         &::placeholder{
