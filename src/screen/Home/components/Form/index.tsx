@@ -9,7 +9,7 @@ export const Form = () => {
 
   const schema = z.object({
     name: z.string().min(1, 'Campo obrigatório'),
-    comment: z.string().min(1, 'Campo obrigatório'),
+    comment: z.string().min(1, 'Campo obrigatório').max(255, "Não é possivel enviar mais que 255 caracter"),
     supports_idea: z.string().min(1, 'Campo obrigatório'),
     recyclable_shelters: z.string().min(1, 'Campo obrigatório'),
     public_management: z.string().min(1, 'Campo obrigatório'),
@@ -67,7 +67,7 @@ export const Form = () => {
           </Styles.FieldContainer>
           <Styles.FieldContainer>
           <Styles.RadioLabel htmlFor="comment"><p className="p1">Deixe uma comentário:</p></Styles.RadioLabel>
-            <input type="text" placeholder="Sua opinião..." {...register('comment')} />
+            <textarea placeholder="Escreva uma comentário..." maxLength={255} {...register('comment')}/>
             {errors.comment && <p className="error">{errors.comment.message}</p>}
           </Styles.FieldContainer>
           <div>

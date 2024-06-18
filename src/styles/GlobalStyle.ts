@@ -80,6 +80,16 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 
+    textarea{
+        resize: none;
+        width: 100%;
+        height: 120px;
+        border-radius: 7px;
+        border: 1px solid #4762FF;
+        padding: 10px;
+        font-size: 1.6rem;
+    }
+
     .error{
         color: red;
     }
