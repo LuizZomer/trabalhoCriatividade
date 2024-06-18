@@ -79,4 +79,8 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 
+    .error{
+        color: red;
+    }
+
 `
