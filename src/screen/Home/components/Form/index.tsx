@@ -4,8 +4,11 @@ import * as Styles from "./styles";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 
 export const Form = () => {
+  const [onQuery, setOnQuery] = useState(false)
+
   const schema = z.object({
     name: z.string().min(1, "Campo obrigatório"),
     comment: z
@@ -41,6 +44,7 @@ export const Form = () => {
   });
 
   const createInfo = async (data: TFormData) => {
+    setOnQuery(true)
     await axios
       .post("https://animalhouse-l2wi.onrender.com/forms", {
         adopted_from_shelter: data.adopted_from_shelter === "true",
@@ -57,6 +61,7 @@ export const Form = () => {
       })
       .catch(() => {
         alert("Erro ao processar os dados");
+        setOnQuery(false)
       });
   };
 
@@ -260,7 +265,7 @@ export const Form = () => {
             )}
           </div>
 
-          <ActionButton label="Enviar resposta" height="66px" width="100%" />
+          <ActionButton type="submit" label={onQuery ? "Enviando..." :  "Enviar resposta" } height="66px" width="100%" disabled={onQuery}/>
         </Styles.Form>
       </Styles.FormContainer>
     </Styles.Container>
