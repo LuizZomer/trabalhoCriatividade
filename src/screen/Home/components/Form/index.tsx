@@ -61,8 +61,7 @@ export const Form = () => {
       })
       .catch(() => {
         alert("Erro ao processar os dados");
-        setOnQuery(false)
-      });
+      }).finally(() => setOnQuery(false));
   };
 
   return (
