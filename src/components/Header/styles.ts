@@ -8,10 +8,15 @@ export const HeaderContainer = styled.header`
     justify-content: center;
     align-items: center;
     background-color: #fff;
+
+    @media (max-width:900px) {
+        text-align: center;
+    }
+
 `
 
 export const NavContainer = styled.nav`
-    font-size: 16px;
+    font-size: 1.6rem;
     >ul{
         display: flex;
         gap: 46px;
@@ -24,5 +29,17 @@ export const NavContainer = styled.nav`
 
     a:hover{
         color: #777;
+    }
+
+    @media (max-width:900px) {
+        margin: 30px;
+
+        ul{
+            display: flex;
+            align-items: center;
+        }
+       a{
+        font-size: 1.3rem;
+       } 
     }
 ` 
