@@ -1,0 +1,15 @@
+{
+    "routes": [
+      { "handle": "filesystem" },
+      {
+        "src": "/api/(.*)",
+        "dest": "http://seu-backend.com/api/$1",
+        "methods": ["GET", "POST", "PUT", "DELETE"]
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/$1",
+        "headers": { "x-vercel-routing": "true" }
+      }
+    ]
+  }
