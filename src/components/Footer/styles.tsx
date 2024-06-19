@@ -9,6 +9,7 @@ export const FooterContainer = styled.footer`
   align-items: center;
   gap: 30px;
   padding: 40px;
+  margin-top: auto;
 
   > ul {
     list-style: none;
