@@ -39,7 +39,7 @@ export const Form = () => {
   })
 
   const createInfo = async(data: TFormData) => {    
-    await axios.post('http://189.8.209.240:9011/forms',{
+    await axios.post('https://189.8.209.240:9011/forms',{
       adopted_from_shelter: data.adopted_from_shelter === 'true',
       comment: data.comment,
       local_shelter: data.local_shelter === 'true',
