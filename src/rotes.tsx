@@ -3,6 +3,7 @@ import { Home } from "./screen/Home";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ProjectItems } from "./screen/ProjectItems";
+import { DataScreen } from "./screen/Data";
 
 export const AppRotes = () => {
   return (
@@ -11,6 +12,7 @@ export const AppRotes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projectItems" element={<ProjectItems />} />
+        <Route path="/data" element={<DataScreen />} />
       </Routes>
       <Footer />
     </BrowserRouter>
