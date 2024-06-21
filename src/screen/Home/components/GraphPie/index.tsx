@@ -12,6 +12,7 @@ interface IGraphData {
 export const PieGraph = ({ isVisible }: { isVisible: boolean }) => {
   const [dataGraph, setDataGraph] = useState<IGraphData>();
   const [loading, setLoading] = useState(true);
+  const [isVisibleLocal, setIsVisibleLocal] = useState<string | null>();
 
   const apexOptions: ApexOptions = {
     labels: dataGraph?.label,
@@ -24,9 +25,10 @@ export const PieGraph = ({ isVisible }: { isVisible: boolean }) => {
     await axios
       .get("https://animalhouse-l2wi.onrender.com/forms/graphic")
       .then((res) => {
-        console.log(res.data);
-
         setDataGraph(res.data);
+
+        const localGraph = localStorage.getItem("graph");
+        setIsVisibleLocal(localGraph);
       })
       .finally(() => setLoading(false));
   };
@@ -35,7 +37,7 @@ export const PieGraph = ({ isVisible }: { isVisible: boolean }) => {
     reqData();
   }, []);
 
-  return isVisible
+  return isVisible || isVisibleLocal
     ? !loading && (
         <Styles.GraphContainer>
           <Styles.LeftSide>

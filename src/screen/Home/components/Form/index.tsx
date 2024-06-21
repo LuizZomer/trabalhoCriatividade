@@ -62,6 +62,8 @@ export const Form = ({ setIsVisible }: IFormProps) => {
       })
       .then(() => {
         alert("Enviada com sucesso");
+        setIsVisible(true);
+        localStorage.setItem("graph", "true");
       })
       .catch(() => {
         alert("Erro ao processar os dados");
