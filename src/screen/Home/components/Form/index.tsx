@@ -6,8 +6,12 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 
-export const Form = () => {
-  const [onQuery, setOnQuery] = useState(false)
+interface IFormProps {
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Form = ({ setIsVisible }: IFormProps) => {
+  const [onQuery, setOnQuery] = useState(false);
 
   const schema = z.object({
     name: z.string().min(1, "Campo obrigatório"),
@@ -44,7 +48,7 @@ export const Form = () => {
   });
 
   const createInfo = async (data: TFormData) => {
-    setOnQuery(true)
+    setOnQuery(true);
     await axios
       .post("https://animalhouse-l2wi.onrender.com/forms", {
         adopted_from_shelter: data.adopted_from_shelter === "true",
@@ -61,7 +65,8 @@ export const Form = () => {
       })
       .catch(() => {
         alert("Erro ao processar os dados");
-      }).finally(() => setOnQuery(false));
+      })
+      .finally(() => setOnQuery(false));
   };
 
   return (
@@ -75,7 +80,7 @@ export const Form = () => {
             </Styles.RadioLabel>
             <input
               type="text"
-              placeholder="Seu nome..."
+              placeholder="Escreva seu nome..."
               {...register("name")}
               id="name"
             />
@@ -83,10 +88,10 @@ export const Form = () => {
           </Styles.FieldContainer>
           <Styles.FieldContainer>
             <Styles.RadioLabel htmlFor="comment">
-              <p className="p1">Deixe uma comentário:</p>
+              <p className="p1">Deixe sua opinião sobre o projeto:</p>
             </Styles.RadioLabel>
             <textarea
-              placeholder="Escreva uma comentário..."
+              placeholder="Escreva um comentário..."
               maxLength={255}
               {...register("comment")}
             />
@@ -264,7 +269,13 @@ export const Form = () => {
             )}
           </div>
 
-          <ActionButton type="submit" label={onQuery ? "Enviando..." :  "Enviar resposta" } height="66px" width="100%" disabled={onQuery}/>
+          <ActionButton
+            type="submit"
+            label={onQuery ? "Enviando..." : "Enviar resposta"}
+            height="66px"
+            width="100%"
+            disabled={onQuery}
+          />
         </Styles.Form>
       </Styles.FormContainer>
     </Styles.Container>

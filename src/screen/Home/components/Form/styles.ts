@@ -13,7 +13,7 @@ export const  Container = styled.section`
 
     @media (max-width: 900px) {
         justify-content: center;
-        padding: 0 20px;
+        padding: 10px 20px;
     }
 `
 
