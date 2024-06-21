@@ -1,5 +1,5 @@
-import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { Img } from "../../../../components/ImgComponent/styles";
+import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { TimelineElementContainer } from "./styles";
 
 interface IProjectItems {
@@ -20,8 +20,8 @@ export const TimelineElement = ({
   return (
     <VerticalTimelineElement iconStyle={{ background: "gray" }}>
       <TimelineElementContainer>
-        <h2>{title}</h2>
-        <p>{summary}</p>
+        <h1 className="title">{title}</h1>
+        <h4 className="caption">{summary}</h4>
         {image && <Img src={image} $width="90%" />}
         {linkTo && (
           <a href={linkTo} target="_blank">
