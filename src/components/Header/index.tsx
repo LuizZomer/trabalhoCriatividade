@@ -12,9 +12,6 @@ export const Header = () => {
           <li>
             <Link to="/projectItems">Como chegamos até aqui</Link>
           </li>
-          <li>
-            <Link to="/">Entrevistas</Link>
-          </li>
         </ul>
       </Styles.NavContainer>
     </Styles.HeaderContainer>
