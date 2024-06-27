@@ -1,17 +1,15 @@
-import axios from "axios";
 import { ActionButton } from "../../../../components/Buttons/ActionButton";
 import * as Styles from "./styles";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 
-interface IFormProps {
-  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
-}
+// interface IFormProps {
+//   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+// }
 
-export const Form = ({ setIsVisible }: IFormProps) => {
-  const [onQuery, setOnQuery] = useState(false);
+export const Form = () => {
+  // const [onQuery, setOnQuery] = useState(false);
 
   const schema = z.object({
     name: z.string().min(1, "Campo obrigatório"),
@@ -31,7 +29,6 @@ export const Form = ({ setIsVisible }: IFormProps) => {
 
   const {
     register,
-    handleSubmit,
     formState: { errors },
   } = useForm<TFormData>({
     resolver: zodResolver(schema),
@@ -47,35 +44,35 @@ export const Form = ({ setIsVisible }: IFormProps) => {
     },
   });
 
-  const createInfo = async (data: TFormData) => {
-    setOnQuery(true);
-    await axios
-      .post("https://animalhouse-l2wi.onrender.com/forms", {
-        adopted_from_shelter: data.adopted_from_shelter === "true",
-        comment: data.comment,
-        local_shelter: data.local_shelter === "true",
-        name: data.name,
-        public_management: data.public_management === "true",
-        recyclable_shelters: data.recyclable_shelters === "true",
-        supports_idea: data.supports_idea === "true",
-        urban_shelter_necessity: data.urban_shelter_necessity === "true",
-      })
-      .then(() => {
-        alert("Enviada com sucesso");
-        setIsVisible(true);
-        localStorage.setItem("graph", "true");
-      })
-      .catch(() => {
-        alert("Erro ao processar os dados");
-      })
-      .finally(() => setOnQuery(false));
-  };
+  // const createInfo = async (data: TFormData) => {
+  //   setOnQuery(true);
+  //   await axios
+  //     .post("https://animalhouse-l2wi.onrender.com/forms", {
+  //       adopted_from_shelter: data.adopted_from_shelter === "true",
+  //       comment: data.comment,
+  //       local_shelter: data.local_shelter === "true",
+  //       name: data.name,
+  //       public_management: data.public_management === "true",
+  //       recyclable_shelters: data.recyclable_shelters === "true",
+  //       supports_idea: data.supports_idea === "true",
+  //       urban_shelter_necessity: data.urban_shelter_necessity === "true",
+  //     })
+  //     .then(() => {
+  //       alert("Enviada com sucesso");
+  //       setIsVisible(true);
+  //       localStorage.setItem("graph", "true");
+  //     })
+  //     .catch(() => {
+  //       alert("Erro ao processar os dados");
+  //     })
+  //     .finally(() => setOnQuery(false));
+  // };
 
   return (
     <Styles.Container>
       <Styles.FormContainer>
         <h2>Por favor, Ajude Respondendo a Este Formulário</h2>
-        <Styles.Form onSubmit={handleSubmit(createInfo)}>
+        <Styles.Form>
           <Styles.FieldContainer>
             <Styles.RadioLabel htmlFor="name">
               <p className="p1">Seu nome:</p>
@@ -271,12 +268,22 @@ export const Form = ({ setIsVisible }: IFormProps) => {
             )}
           </div>
 
+          {/* 
+            Antigo
+
           <ActionButton
             type="submit"
             label={onQuery ? "Enviando..." : "Enviar resposta"}
             height="66px"
             width="100%"
             disabled={onQuery}
+          /> */}
+
+          <ActionButton
+            type="button"
+            label={"Enviar resposta"}
+            height="66px"
+            width="100%"
           />
         </Styles.Form>
       </Styles.FormContainer>

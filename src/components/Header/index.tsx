@@ -12,6 +12,9 @@ export const Header = () => {
           <li>
             <Link to="/projectItems">Como chegamos até aqui</Link>
           </li>
+          <li>
+            <Link to="/data">Dados coletados</Link>
+          </li>
         </ul>
       </Styles.NavContainer>
     </Styles.HeaderContainer>

@@ -3,7 +3,7 @@ import { Home } from "./screen/Home";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ProjectItems } from "./screen/ProjectItems";
-import { DataScreen } from "./screen/Data";
+import { DataScreen } from "./screen/DataScreen";
 
 export const AppRotes = () => {
   return (

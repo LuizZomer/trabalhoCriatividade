@@ -7,14 +7,14 @@ import { OurCause } from "./components/OurCause";
 import { StrategicPoints } from "./components/StrategicPoints";
 
 export const Home = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible] = useState(true);
   return (
     <main>
       <Apresentation />
       <Opinions />
       <OurCause />
       <StrategicPoints />
-      <Form setIsVisible={setIsVisible} />
+      <Form />
       <PieGraph isVisible={isVisible} />
     </main>
   );
