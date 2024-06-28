@@ -1,4 +1,4 @@
-import personaImage from "./personaImage.jpeg";
+import personaImage from "./personaImage.jpg";
 import scamper from "./scamper.jpeg";
 import wh from "./wh.jpeg";
 import mapaMental from "./mapaMental.jpeg";
