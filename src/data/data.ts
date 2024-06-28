@@ -139,7 +139,7 @@ export const opnions = [
       id: "6e58d628-015e-493c-88ab-3d90a9234daf",
       name: "Roberta Carla Martins Monteiro",
       date: "26/06/2024",
-      comment: "Super necessário para a cidade ja que grandd parte dos animais de rua nao tem um lugar wue nao pegue chuva e se proteger dl frio"
+      comment: "Super necessário para a cidade ja que grande parte dos animais de rua nao tem um lugar que não pegue chuva e se proteger do frio"
     },
     {
       id: "6397f6da-f032-4eba-9441-fe50759074b7",
